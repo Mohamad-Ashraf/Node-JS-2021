@@ -16,6 +16,7 @@ oc get pods'''
 oc get dc --show-labels | grep "app=drupal"'''
         }
 
+        openshiftVerifyDeployment 'drupal'
       }
     }
 
