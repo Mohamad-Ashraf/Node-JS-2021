@@ -15,10 +15,14 @@ oc get pods'''
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         sh '''#!/bin/bash
-oc get dc --show-labels | grep "app=drupal" | cut -d" " -f3'''
+if [ oc get dc --show-labels | grep "app=drupal" | cut -d" " -f3==1] ; then
+ echo "DC Exist"
+else
+ echo "DC Doesn\'t Exist"
+fi'''
       }
     }
 
