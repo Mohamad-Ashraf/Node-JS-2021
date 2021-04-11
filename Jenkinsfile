@@ -11,7 +11,7 @@ oc get pods'''
 
     stage('Check if DC exist') {
       steps {
-        openshiftVerifyDeployment 'drupal'
+        openshiftVerifyDeployment(depCfg: 'drupal', apiURL: 'https://api.ocp.rscloud.io:6443')
       }
     }
 
