@@ -15,5 +15,12 @@ oc get pods'''
       }
     }
 
+    stage('') {
+      steps {
+        sh '''#!/bin/bash
+oc get dc --show-labels | grep "app=drupal" | cut -d" " -f3'''
+      }
+    }
+
   }
 }
