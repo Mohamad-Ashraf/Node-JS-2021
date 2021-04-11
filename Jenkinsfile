@@ -11,11 +11,6 @@ oc get pods'''
 
     stage('Check if DC exist') {
       steps {
-        waitUntil() {
-          sh '''#!/bin/bash
-oc get dc --show-labels | grep "app=drupal"'''
-        }
-
         openshiftVerifyDeployment 'drupal'
       }
     }
